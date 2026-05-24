@@ -1,0 +1,29 @@
+"use client";
+
+import { Header } from "@/components/header";
+import { TechBackground } from "@/components/tech-background";
+import { HeroSection } from "@/components/hero-section";
+import { ServicesSection } from "@/components/services-section";
+import { TutorialsSection } from "@/components/tutorials-section";
+import { ToolsSection } from "@/components/tools-section";
+import { AboutSection } from "@/components/about-section";
+import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen flex flex-col relative">
+      <TechBackground />
+      <Header />
+      <div className="flex-1 relative z-10">
+        <HeroSection />
+        <ServicesSection />
+        <TutorialsSection />
+        <ToolsSection />
+        <AboutSection />
+        <ContactSection />
+      </div>
+      <Footer />
+    </main>
+  );
+}
