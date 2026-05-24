@@ -12,6 +12,7 @@ const navItems = [
   { href: "#services", label: "خدمات" },
   { href: "#tutorials", label: "آموزش‌ها" },
   { href: "#tools", label: "ابزارها" },
+  { href: "/blog", label: "بلاگ" },
   { href: "#about", label: "درباره ما" },
   { href: "#contact", label: "تماس" },
 ];

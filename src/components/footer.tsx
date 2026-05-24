@@ -27,7 +27,7 @@ const footerLinks = {
     links: [
       { label: "درباره ما", href: "#about" },
       { label: "تماس", href: "#contact" },
-      { label: "بلاگ", href: "#" },
+      { label: "بلاگ", href: "/blog" },
       { label: "فرصت‌های شغلی", href: "#" },
     ],
   },
