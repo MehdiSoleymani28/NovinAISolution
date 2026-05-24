@@ -4,12 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Wrench,
+  Workflow,
   MessageSquare,
   FileText,
-  Image,
-  Search,
+  Mail,
   BarChart3,
+  Bot,
   ArrowLeft,
   Star,
 } from "lucide-react";
@@ -17,58 +17,58 @@ import { motion } from "framer-motion";
 
 const tools = [
   {
-    icon: MessageSquare,
-    name: "چت‌بات هوشمند",
+    icon: Workflow,
+    name: "ورکفلو اتوماسیون ایمیل",
     description:
-      "ساخت چت‌بات‌های سفارشی با قابلیت درک زبان طبیعی فارسی. پاسخگویی خودکار به مشتریان و پشتیبانی ۲۴ ساعته.",
+      "دریافت ایمیل‌ها رو خودکار монитор کنید، با AI طبقه‌بندی و پاسخ اولیه بدهید. اتصال Gmail به CRM و ایجاد تیکت خودکار برای تیم پشتیبانی.",
     tag: "پرطرفدار",
     tagColor: "bg-orange-500/10 text-orange-500",
-    category: "NLP",
+    category: "Make / n8n",
+  },
+  {
+    icon: MessageSquare,
+    name: "چت‌بات پشتیبانی هوشمند",
+    description:
+      "چت‌باتی که با دانش محصولات شما آموزش دیده و ۲۴ ساعته به مشتریان پاسخ می‌دهد. اتصال به واتساپ، تلگرام و وب‌سایت با یک دستیار یکپارچه.",
+    tag: "پرطرفدار",
+    tagColor: "bg-orange-500/10 text-orange-500",
+    category: "AI Agent",
   },
   {
     icon: FileText,
-    name: "تحلیل‌گر اسناد",
+    name: "تولید خودکار محتوا",
     description:
-      "استخراج خودکار اطلاعات از اسناد، فاکتورها و قراردادها. پردازش هوشمند متن با دقت بالا و سرعت بالا.",
-    tag: "جدید",
+      "از ایده تا محتوای نهایی. تولید خودکار پست شبکه‌های اجتماعی، مقالات بلاگ، خبرنامه و کپشن محصول با تنظیمات لحن و سبک سفارشی.",
+    tag: "کاربردی",
     tagColor: "bg-green-500/10 text-green-500",
-    category: "Document AI",
+    category: "GPT / Claude",
   },
   {
-    icon: Image,
-    name: "بینایی ماشین",
+    icon: Mail,
+    name: "دستیار ایمیل هوشمند",
     description:
-      "تشخیص اشیاء، طبقه‌بندی تصاویر و تحلیل ویدیو. کاربرد در صنایع تولید، امنیت و پزشکی.",
-    tag: "حرفه‌ای",
-    tagColor: "bg-purple-500/10 text-purple-500",
-    category: "Computer Vision",
-  },
-  {
-    icon: Search,
-    name: "موتور جستجوی هوشمند",
-    description:
-      "جستجوی معنایی و تلفیقی در پایگاه دانش سازمان. یافتن سریع و دقیق اطلاعات از میان هزاران سند.",
-    tag: "سازمانی",
+      "خواندن خودکار ایمیل‌های دریافتی، خلاصه‌سازی، اولویت‌بندی و پیشنهاد پاسخ. صرفه‌جویی ساعت‌ها در روز برای مدیریت صندوق ورودی.",
+    tag: "جدید",
     tagColor: "bg-blue-500/10 text-blue-500",
-    category: "Search",
+    category: "AI Workflow",
   },
   {
     icon: BarChart3,
-    name: "داشبورد تحلیلی",
+    name: "داشبورد گزارش‌دهی خودکار",
     description:
-      "تحلیل پیش‌بینی‌کننده داده‌های کسب‌وکار با نمایش بصری جذاب. پیش‌بینی فروش، رفتار مشتری و ترندهای بازار.",
-    tag: "کاربردی",
-    tagColor: "bg-teal-500/10 text-teal-500",
+      "جمع‌آوری خودکار داده‌ها از منابع مختلف و تولید گزارش‌های روزانه، هفتگی و ماهانه. تحلیل ترندها و ارسال هشدارهای هوشمند.",
+    tag: "سازمانی",
+    tagColor: "bg-purple-500/10 text-purple-500",
     category: "Analytics",
   },
   {
-    icon: Wrench,
-    name: "API Builder",
+    icon: Bot,
+    name: "دستیار اسناد هوشمند",
     description:
-      "ساخت API هوش مصنوعی بدون کدنویسی. اتصال آسان مدل‌های AI به نرم‌افزارها و سرویس‌های موجود.",
-    tag: "بدون کد",
-    tagColor: "bg-pink-500/10 text-pink-500",
-    category: "No-Code",
+      "آپلود قراردادها، فاکتورها و اسناد سازمانی و سوال‌وجواب از روی آنها. جستجوی معنایی در هزاران سند و استخراج خودکار اطلاعات کلیدی.",
+    tag: "حرفه‌ای",
+    tagColor: "bg-teal-500/10 text-teal-500",
+    category: "RAG System",
   },
 ];
 
@@ -90,13 +90,13 @@ export function ToolsSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            ابزارها
+            ورکفلوهای آماده
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            ابزارهای <span className="text-gradient">هوشمند AI</span>
+            ورکفلوهای <span className="text-gradient">آماده اتوماسیون</span>
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-            ابزارهای آماده و قابل سفارشی‌سازی برای هوشمندسازی سریع کسب‌وکار شما
+            راهکارهای آماده و قابل سفارشی‌سازی برای خودکارسازی سریع فرآیندهای کسب‌وکار شما
           </p>
         </motion.div>
 
@@ -153,7 +153,7 @@ export function ToolsSection() {
                       size="sm"
                       className="text-primary hover:text-primary hover:bg-primary/5 text-xs"
                     >
-                      بیشتر بدانید
+                      جزئیات بیشتر
                       <ArrowLeft className="w-3 h-3 mr-1" />
                     </Button>
                   </div>

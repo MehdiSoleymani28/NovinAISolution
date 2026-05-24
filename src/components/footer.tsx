@@ -7,19 +7,19 @@ const footerLinks = {
   services: {
     title: "خدمات",
     links: [
-      { label: "مشاوره AI", href: "#services" },
-      { label: "زیرساخت هوش مصنوعی", href: "#services" },
-      { label: "اتوماسیون فرآیندها", href: "#services" },
-      { label: "تحلیل داده", href: "#services" },
+      { label: "ورکفلو هوشمند", href: "#services" },
+      { label: "دستیار هوشمند", href: "#services" },
+      { label: "پیاده‌سازی ابزارهای AI", href: "#services" },
+      { label: "مشاوره و نیازسنجی", href: "#services" },
     ],
   },
   tutorials: {
     title: "آموزش‌ها",
     links: [
-      { label: "آشنایی با AI", href: "#tutorials" },
-      { label: "پایتون برای AI", href: "#tutorials" },
-      { label: "یادگیری عمیق", href: "#tutorials" },
-      { label: "AI در کسب‌وکار", href: "#tutorials" },
+      { label: "ChatGPT و Claude", href: "#tutorials" },
+      { label: "Make و n8n", href: "#tutorials" },
+      { label: "ساخت AI Agent", href: "#tutorials" },
+      { label: "اتوماسیون عملی", href: "#tutorials" },
     ],
   },
   company: {
@@ -54,8 +54,8 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm mb-6">
-              ارائه‌دهنده خدمات مشاوره هوش مصنوعی و ایجاد زیرساخت AI برای
-              کسب‌وکارها. تحول دیجیتال شما با هوش مصنوعی آغاز می‌شود.
+              ورکفلوهای هوشمند و دستیارهای AI برای خودکارسازی فرآیندهای دستی کسب‌وکار.
+              با ابزارهای آماده، سریع و مقرون‌به‌صرفه.
             </p>
             <div className="flex items-center gap-3">
               <Link

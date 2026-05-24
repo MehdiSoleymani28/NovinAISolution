@@ -4,10 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  BookOpen,
-  Code,
-  GraduationCap,
-  Play,
+  MessageSquare,
+  Workflow,
+  Settings,
+  Zap,
   ArrowLeft,
   Clock,
   Signal,
@@ -17,60 +17,53 @@ import { motion } from "framer-motion";
 const tutorials = [
   {
     category: "مقدماتی",
-    icon: BookOpen,
-    title: "آشنایی با هوش مصنوعی",
+    icon: MessageSquare,
+    title: "کار حرفه‌ای با ChatGPT و Claude",
     description:
-      "از مفاهیم پایه تا درک عمیق یادگیری ماشین و شبکه‌های عصبی. دوره‌ای جامع برای شروع مسیر یادگیری هوش مصنوعی.",
-    lessons: 24,
-    duration: "۱۲ ساعت",
+      "یادگیری پرامپت‌نویسی حرفه‌ای و استفاده مؤثر از مدل‌های زبانی. از نوشتن پرامپت‌های دقیق تا ساخت سیستم‌های پرامپت زنجیره‌ای برای خودکارسازی وظایف روزانه.",
+    lessons: 18,
+    duration: "۸ ساعت",
     level: "مقدماتی",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
   },
   {
-    category: "میانی",
-    icon: Code,
-    title: "پایتون برای AI",
+    category: "عملی",
+    icon: Workflow,
+    title: "ساخت ورکفلو با Make و n8n",
     description:
-      "یادگیری پایتون با تمرکز بر کتابخانه‌های هوش مصنوعی شامل NumPy، Pandas، Scikit-learn و TensorFlow. از صفر تا پروژه عملی.",
-    lessons: 36,
-    duration: "۲۰ ساعت",
-    level: "میانی",
+      "آموزش عملی ساخت جریان‌های کاری خودکار. از اتصال Gmail به Slack تا ساخت پایپ‌لاین‌های پیچیده پردازش داده، هر ورکفلی که نیاز دارید رو خودتان بسازید.",
+    lessons: 24,
+    duration: "۱۲ ساعت",
+    level: "عملی",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
   },
   {
     category: "پیشرفته",
-    icon: GraduationCap,
-    title: "یادگیری عمیق و LLM",
+    icon: Settings,
+    title: "ساخت AI Agent سفارشی",
     description:
-      "آموزش پیشرفته شبکه‌های عصبی عمیق، Transformer ها و مدل‌های زبانی بزرگ. شامل پروژه‌های عملی Fine-tuning و RAG.",
-    lessons: 42,
-    duration: "۳۰ ساعت",
+      "طراحی و پیاده‌سازی دستیارهای هوشمند اختصاصی. از ساخت Agent با LangChain تا پیاده‌سازی RAG و ابزارهای اختصاصی، دستیار AI متناسب با کسب‌وکار خود بسازید.",
+    lessons: 30,
+    duration: "۱۸ ساعت",
     level: "پیشرفته",
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
   },
   {
     category: "کاربردی",
-    icon: Play,
-    title: "AI در کسب‌وکار",
+    icon: Zap,
+    title: "اتوماسیون کسب‌وکار عملی",
     description:
-      "پیاده‌سازی عملی هوش مصنوعی در فرآیندهای کسب‌واری. از چت‌بات هوشمند تا سیستم‌های پیشنهاددهنده و تحلیل داده خودکار.",
-    lessons: 28,
-    duration: "۱۸ ساعت",
+      "پیاده‌سازی واقعی اتوماسیون در سناریوهای مختلف: تولید خودکار محتوا، پاسخگویی هوشمند مشتری، گزارش‌دهی خودکار و مدیریت هوشمند ایمیل‌ها و اسناد.",
+    lessons: 20,
+    duration: "۱۰ ساعت",
     level: "کاربردی",
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
   },
 ];
-
-const levelIcons: Record<string, string> = {
-  مقدماتی: "🟢",
-  میان: "🔵",
-  پیشرفته: "🟣",
-  کاربردی: "🟠",
-};
 
 export function TutorialsSection() {
   return (
@@ -94,10 +87,10 @@ export function TutorialsSection() {
             آموزش‌ها
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            آموزش‌های <span className="text-gradient">تخصصی AI</span>
+            ابزارهای AI رو <span className="text-gradient">عملی یاد بگیرید</span>
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-            از مقدماتی تا پیشرفته، مسیر یادگیری هوش مصنوعی را با بهترین آموزش‌ها طی کنید
+            نه تئوری، نه ریاضیات. آموزش عملی ابزارهایی که همین امروز به درد کسب‌وکار شما می‌خورند
           </p>
         </motion.div>
 
@@ -143,7 +136,7 @@ export function TutorialsSection() {
                       {/* Meta */}
                       <div className="flex items-center gap-4 text-xs text-muted-foreground">
                         <div className="flex items-center gap-1">
-                          <Play className="w-3.5 h-3.5" />
+                          <Zap className="w-3.5 h-3.5" />
                           <span>{tutorial.lessons} درس</span>
                         </div>
                         <div className="flex items-center gap-1">

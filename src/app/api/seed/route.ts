@@ -19,14 +19,14 @@ export async function POST() {
       });
     }
 
-    // Create default categories
+    // Create default categories - aligned with actual business focus
     const categories = [
-      { name: "یادگیری ماشین", slug: "machine-learning", color: "#3B82F6" },
-      { name: "یادگیری عمیق", slug: "deep-learning", color: "#8B5CF6" },
-      { name: "پردازش زبان طبیعی", slug: "nlp", color: "#10B981" },
-      { name: "بینایی ماشین", slug: "computer-vision", color: "#F59E0B" },
-      { name: "AI در کسب‌وکار", slug: "ai-business", color: "#EF4444" },
-      { name: "آموزش", slug: "tutorial", color: "#06B6D4" },
+      { name: "اتوماسیون و ورکفلو", slug: "automation-workflow", color: "#3B82F6" },
+      { name: "دستیارهای هوشمند", slug: "ai-agents", color: "#8B5CF6" },
+      { name: "ابزارهای AI", slug: "ai-tools", color: "#10B981" },
+      { name: "پرامپت‌نویسی", slug: "prompt-engineering", color: "#F59E0B" },
+      { name: "No-Code AI", slug: "no-code-ai", color: "#EF4444" },
+      { name: "آموزش عملی", slug: "practical-tutorial", color: "#06B6D4" },
     ];
 
     for (const cat of categories) {
@@ -38,19 +38,22 @@ export async function POST() {
       }
     }
 
-    // Create default tags
+    // Create default tags - aligned with actual business focus
     const tags = [
-      { name: "پایتون", slug: "python" },
-      { name: "TensorFlow", slug: "tensorflow" },
-      { name: "PyTorch", slug: "pytorch" },
-      { name: "GPT", slug: "gpt" },
-      { name: "LLM", slug: "llm" },
+      { name: "ChatGPT", slug: "chatgpt" },
+      { name: "Claude", slug: "claude" },
+      { name: "Make", slug: "make" },
+      { name: "n8n", slug: "n8n" },
+      { name: "AI Agent", slug: "ai-agent" },
       { name: "RAG", slug: "rag" },
-      { name: "Transformer", slug: "transformer" },
-      { name: "ChatBot", slug: "chatbot" },
-      { name: "API", slug: "api" },
-      { name: "مقدماتی", slug: "beginner" },
-      { name: "پیشرفته", slug: "advanced" },
+      { name: "LangChain", slug: "langchain" },
+      { name: "اتوماسیون", slug: "automation" },
+      { name: "ورکفلو", slug: "workflow" },
+      { name: "پرامپت", slug: "prompt" },
+      { name: "No-Code", slug: "no-code" },
+      { name: "دستیار هوشمند", slug: "assistant" },
+      { name: "چت‌بات", slug: "chatbot" },
+      { name: "کسب‌وکار", slug: "business" },
     ];
 
     for (const tag of tags) {

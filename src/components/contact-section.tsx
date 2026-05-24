@@ -71,10 +71,10 @@ export function ContactSection() {
             تماس با ما
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            مشاوره <span className="text-gradient">رایگان</span> دریافت کنید
+            نیازسنجی رایگان <span className="text-gradient">اتوماسیون</span>
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-            همین حالا با ما تماس بگیرید و مسیر تحول دیجیتال کسب‌وکارتان را شروع کنید
+            بگویید کدام فرآیندهای سازمانتان دستی و تکراری است، تا راهکار اتوماسیون را به شما نشان دهیم
           </p>
         </motion.div>
 
@@ -141,7 +141,7 @@ export function ContactSection() {
                       توضیحات پروژه
                     </label>
                     <Textarea
-                      placeholder="درباره پروژه و نیازهای خود بنویسید..."
+                      placeholder="کدام فرآیندهای سازمانتان دستی و تکراری است؟ چه کارهایی دوست دارید خودکار شوند؟"
                       rows={5}
                       required
                       className="bg-background/50 resize-none"
@@ -166,7 +166,7 @@ export function ContactSection() {
                     ) : (
                       <>
                         <Send className="w-4 h-4 ml-2" />
-                        ارسال درخواست مشاوره
+                        ارسال درخواست نیازسنجی
                       </>
                     )}
                   </Button>
@@ -210,10 +210,10 @@ export function ContactSection() {
             {/* CTA Card */}
             <Card className="border-primary/20 bg-primary/5 backdrop-blur-sm">
               <CardContent className="p-5">
-                <h3 className="font-bold mb-2">مشاوره رایگان ۳۰ دقیقه‌ای</h3>
+                <h3 className="font-bold mb-2">نیازسنجی رایگان اتوماسیون</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  همین حالا وقت رزرو کنید و با متخصصین ما درباره نیازهای
-                  AI سازمانتان گفتگو کنید. بدون هیچ تعهدی.
+                  فرآیندهای دستی سازمانتان رو به ما بگویید تا در یک جلسه ۳۰ دقیقه‌ای،
+                  راهکار عملی و هزینه اتوماسیون رو به شما ارائه دهیم. بدون هیچ تعهدی.
                 </p>
               </CardContent>
             </Card>

@@ -28,7 +28,7 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-primary mb-8"
           >
             <Sparkles className="w-4 h-4" />
-            <span>آینده کسب‌وکار شما با هوش مصنوعی</span>
+            <span>کارهای دستی رو به خودکار تبدیل کنید</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -42,7 +42,7 @@ export function HeroSection() {
             <span className="text-foreground"> Solution</span>
             <br />
             <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-muted-foreground">
-              تحول دیجیتال با هوش مصنوعی
+              ورکفلو هوشمند، کسب‌وکار خودکار
             </span>
           </motion.h1>
 
@@ -53,8 +53,8 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground mb-10 leading-relaxed"
           >
-            مشاوره تخصصی، زیرساخت‌سازی و آموزش هوش مصنوعی برای کسب‌وکارها.
-            از ایده تا اجرا، همراه شما در مسیر هوشمندسازی سازمان هستیم.
+            با استفاده از ابزارهای هوش مصنوعی، فرآیندهای دستی سازمانتون رو خودکار کنید.
+            از ساخت ورکفلو و دستیارهای هوشمند تا اتوماسیون کامل کسب‌وکار، همراه شما هستیم.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -71,7 +71,7 @@ export function HeroSection() {
             >
               <Link href="#services">
                 <Zap className="w-5 h-5 ml-2" />
-                شروع تحول دیجیتال
+                اتوماسیون کسب‌وکار
               </Link>
             </Button>
             <Button
@@ -81,7 +81,7 @@ export function HeroSection() {
               asChild
             >
               <Link href="#tutorials">
-                آموزش‌های رایگان
+                آموزش ابزارهای AI
                 <ArrowLeft className="w-5 h-5 mr-2" />
               </Link>
             </Button>
@@ -95,9 +95,9 @@ export function HeroSection() {
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 max-w-3xl mx-auto"
           >
             {[
-              { value: "۵۰+", label: "پروژه موفق" },
-              { value: "۱۰۰+", label: "مشتری راضی" },
-              { value: "۲۰+", label: "آموزش تخصصی" },
+              { value: "۱۰+", label: "ورکفلو آماده" },
+              { value: "۵+", label: "دستیار هوشمند" },
+              { value: "۱۵+", label: "آموزش عملی" },
               { value: "۲۴/۷", label: "پشتیبانی" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
