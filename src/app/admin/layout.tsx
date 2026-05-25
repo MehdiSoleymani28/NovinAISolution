@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useAuthStore } from "@/lib/auth-store";
 import { useEffect, useSyncExternalStore } from "react";
 import { Button } from "@/components/ui/button";
-import { Brain, FileText, LayoutDashboard, LogOut, Plus, ArrowRight, Tags, FolderOpen } from "lucide-react";
+import { Brain, FileText, LayoutDashboard, LogOut, Plus, ArrowRight, Tags, FolderOpen, Bot, BookOpen, MessageSquare, UserCheck } from "lucide-react";
 import Link from "next/link";
 
 function AdminSidebar() {
@@ -23,6 +23,10 @@ function AdminSidebar() {
     { href: "/admin/articles", label: "مقالات", icon: FileText },
     { href: "/admin/categories", label: "دسته‌بندی‌ها", icon: FolderOpen },
     { href: "/admin/tags", label: "برچسب‌ها", icon: Tags },
+    { href: "/admin/chatbot", label: "دستیار هوشمند", icon: Bot },
+    { href: "/admin/knowledge", label: "پایگاه دانش", icon: BookOpen },
+    { href: "/admin/conversations", label: "مکالمات", icon: MessageSquare },
+    { href: "/admin/leads", label: "لیدها", icon: UserCheck },
   ];
 
   return (

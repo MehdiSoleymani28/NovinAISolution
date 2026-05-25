@@ -9,6 +9,7 @@ import { ToolsSection } from "@/components/tools-section";
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { ChatWidget } from "@/components/chat-widget";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <AboutSection />
         <ContactSection />
       </div>
+      <ChatWidget />
       <Footer />
     </main>
   );

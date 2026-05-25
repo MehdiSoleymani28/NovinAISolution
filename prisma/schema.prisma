@@ -66,3 +66,75 @@ model ArticleTag {
 
   @@unique([articleId, tagId])
 }
+
+// ===== AI Chatbot Models =====
+
+model ChatbotSettings {
+  id              String   @id @default(cuid())
+  modelName       String   @default("gpt-4o-mini")
+  personality     String   @default("دستیار حرفه‌ای و دوستانه شرکت نوین ای‌آی سولوشن")
+  welcomeMessage  String   @default("سلام! 👋 من دستیار هوشمند نوین ای‌آی سولوشن هستم. چطور می‌تونم کمکتون کنم؟")
+  fallbackMessage String   @default("متأسفانه اطلاعاتی در این مورد ندارم. می‌تونم شمارتون رو بذارم تا همکارام باهاتون تماس بگیرن؟")
+  leadFormEnabled Boolean  @default(true)
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model KnowledgeEntry {
+  id          String           @id @default(cuid())
+  title       String
+  content     String
+  source      String?
+  sourceType  String           @default("text")
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  chunks      KnowledgeChunk[]
+}
+
+model KnowledgeChunk {
+  id         String         @id @default(cuid())
+  entryId    String
+  content    String
+  chunkIndex Int
+  createdAt  DateTime       @default(now())
+  entry      KnowledgeEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@index([entryId])
+}
+
+model Conversation {
+  id           String    @id @default(cuid())
+  visitorId    String?
+  visitorName  String?
+  visitorPhone String?
+  status       String    @default("active")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  messages     Message[]
+  lead         Lead?
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  role           String
+  content        String
+  createdAt      DateTime     @default(now())
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+}
+
+model Lead {
+  id             String       @id @default(cuid())
+  conversationId String       @unique
+  name           String
+  phone          String
+  email          String?
+  note           String?
+  status         String       @default("new")
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+}
