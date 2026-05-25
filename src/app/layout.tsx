@@ -16,23 +16,27 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://novinaisolution.com"),
-  title: "NovinAISolution | مشاوره و خدمات هوش مصنوعی برای کسب‌وکار",
+  title: "NovinAISolution | اتوماسیون و ورکفلو هوشمند با ابزارهای AI",
   description:
-    "NovinAISolution - ارائه‌دهنده خدمات مشاوره هوش مصنوعی، ایجاد زیرساخت AI برای کسب‌وکارها، آموزش و ابزارهای هوش مصنوعی. تحول دیجیتال کسب‌وکار شما با هوش مصنوعی.",
+    "NovinAISolution - پیاده‌سازی ورکفلوهای کاری هوشمند، اتوماسیون فرآیندهای دستی با دستیارهای AI و ابزارهای No-Code. خودکارسازی کسب‌وکار با Make، n8n، ChatGPT و Claude.",
   keywords: [
-    "هوش مصنوعی",
-    "مشاوره هوش مصنوعی",
-    "AI consulting",
+    "اتوماسیون کسب‌وکار",
+    "ورکفلو هوشمند",
+    "دستیار هوش مصنوعی",
+    "AI workflow",
     "NovinAISolution",
     "نوین ای آی سولوشن",
-    "زیرساخت هوش مصنوعی",
-    "آموزش هوش مصنوعی",
+    "اتوماسیون فرآیندها",
     "ابزارهای AI",
-    "تحول دیجیتال",
-    "machine learning",
-    "deep learning",
-    "اتوماسیون هوشمند",
-    "کسب‌وکار هوشمند",
+    "Make",
+    "n8n",
+    "ChatGPT",
+    "Claude",
+    "No-Code AI",
+    "AI Agent",
+    "چت‌بات هوشمند",
+    "پرامپت‌نویسی",
+    "خودکارسازی",
   ],
   authors: [{ name: "NovinAISolution" }],
   creator: "NovinAISolution",
@@ -52,9 +56,9 @@ export const metadata: Metadata = {
     icon: "/logo.png",
   },
   openGraph: {
-    title: "NovinAISolution | مشاوره و خدمات هوش مصنوعی",
+    title: "NovinAISolution | اتوماسیون و ورکفلو هوشمند با AI",
     description:
-      "ارائه‌دهنده خدمات مشاوره هوش مصنوعی، ایجاد زیرساخت AI و آموزش برای کسب‌وکارها",
+      "پیاده‌سازی ورکفلوهای کاری هوشمند، اتوماسیون فرآیندهای دستی و ساخت دستیارهای AI برای کسب‌وکارها",
     url: "https://novinaisolution.com",
     siteName: "NovinAISolution",
     locale: "fa_IR",
@@ -70,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NovinAISolution | مشاوره و خدمات هوش مصنوعی",
+    title: "NovinAISolution | اتوماسیون و ورکفلو هوشمند با AI",
     description:
-      "ارائه‌دهنده خدمات مشاوره هوش مصنوعی، ایجاد زیرساخت AI و آموزش برای کسب‌وکارها",
+      "پیاده‌سازی ورکفلوهای کاری هوشمند، اتوماسیون فرآیندهای دستی و ساخت دستیارهای AI برای کسب‌وکارها",
   },
   alternates: {
     canonical: "https://novinaisolution.com",
@@ -95,7 +99,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "NovinAISolution",
               description:
-                "ارائه‌دهنده خدمات مشاوره هوش مصنوعی و ایجاد زیرساخت AI برای کسب‌وکارها",
+                "پیاده‌سازی ورکفلوهای هوشمند و اتوماسیون فرآیندهای دستی کسب‌وکار با ابزارهای AI و پلتفرم‌های No-Code",
               url: "https://novinaisolution.com",
               logo: "https://novinaisolution.com/logo.png",
               sameAs: [],

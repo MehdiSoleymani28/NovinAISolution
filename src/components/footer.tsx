@@ -73,7 +73,7 @@ export function Footer() {
                 <Linkedin className="w-4 h-4 text-primary" />
               </Link>
               <Link
-                href="#"
+                href="https://github.com/MehdiSoleymani28/NovinAISolution"
                 className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
                 aria-label="GitHub"
               >

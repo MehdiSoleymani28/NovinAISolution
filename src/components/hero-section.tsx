@@ -95,10 +95,10 @@ export function HeroSection() {
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 max-w-3xl mx-auto"
           >
             {[
-              { value: "۱۰+", label: "ورکفلو آماده" },
-              { value: "۵+", label: "دستیار هوشمند" },
-              { value: "۱۵+", label: "آموزش عملی" },
-              { value: "۲۴/۷", label: "پشتیبانی" },
+              { value: "Make/n8n", label: "تخصص ورکفلو" },
+              { value: "GPT/Claude", label: "دستیارهای AI" },
+              { value: "No-Code", label: "بدون برنامه‌نویسی" },
+              { value: "رایگان", label: "نیازسنجی اولیه" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-gradient">
