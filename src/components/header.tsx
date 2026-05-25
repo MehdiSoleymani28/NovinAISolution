@@ -77,7 +77,7 @@ export function Header() {
               className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground"
               asChild
             >
-              <Link href="#contact">نیازسنجی رایگان</Link>
+              <Link href="#contact">مشاوره رایگان</Link>
             </Button>
 
             {/* Mobile Menu Button */}

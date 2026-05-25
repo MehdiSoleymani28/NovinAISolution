@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Brain, Github, Linkedin, Twitter } from "lucide-react";
+import { Brain, Github } from "lucide-react";
 
 const footerLinks = {
   services: {
@@ -28,7 +28,6 @@ const footerLinks = {
       { label: "درباره ما", href: "#about" },
       { label: "تماس", href: "#contact" },
       { label: "بلاگ", href: "/blog" },
-      { label: "فرصت‌های شغلی", href: "#" },
     ],
   },
 };
@@ -58,21 +57,7 @@ export function Footer() {
               با ابزارهای آماده، سریع و مقرون‌به‌صرفه.
             </p>
             <div className="flex items-center gap-3">
-              <Link
-                href="#"
-                className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4 text-primary" />
-              </Link>
-              <Link
-                href="#"
-                className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4 text-primary" />
-              </Link>
-              <Link
+                <Link
                 href="https://github.com/MehdiSoleymani28/NovinAISolution"
                 className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
                 aria-label="GitHub"
@@ -108,11 +93,11 @@ export function Footer() {
             © {new Date().getFullYear()} NovinAISolution. تمامی حقوق محفوظ است.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <Link href="#" className="hover:text-foreground transition-colors">
-              حریم خصوصی
+            <Link href="/blog" className="hover:text-foreground transition-colors">
+              بلاگ
             </Link>
-            <Link href="#" className="hover:text-foreground transition-colors">
-              شرایط استفاده
+            <Link href="#contact" className="hover:text-foreground transition-colors">
+              تماس با ما
             </Link>
           </div>
         </div>

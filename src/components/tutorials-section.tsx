@@ -2,13 +2,11 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
   MessageSquare,
   Workflow,
   Settings,
   Zap,
-  ArrowLeft,
   Clock,
   Signal,
 } from "lucide-react";
@@ -21,8 +19,6 @@ const tutorials = [
     title: "کار حرفه‌ای با ChatGPT و Claude",
     description:
       "یادگیری پرامپت‌نویسی حرفه‌ای و استفاده مؤثر از مدل‌های زبانی. از نوشتن پرامپت‌های دقیق تا ساخت سیستم‌های پرامپت زنجیره‌ای برای خودکارسازی وظایف روزانه.",
-    lessons: 18,
-    duration: "۸ ساعت",
     level: "مقدماتی",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
@@ -33,8 +29,6 @@ const tutorials = [
     title: "ساخت ورکفلو با Make و n8n",
     description:
       "آموزش عملی ساخت جریان‌های کاری خودکار. از اتصال Gmail به Slack تا ساخت پایپ‌لاین‌های پیچیده پردازش داده، هر ورکفلی که نیاز دارید رو خودتان بسازید.",
-    lessons: 24,
-    duration: "۱۲ ساعت",
     level: "عملی",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
@@ -42,11 +36,9 @@ const tutorials = [
   {
     category: "پیشرفته",
     icon: Settings,
-    title: "ساخت AI Agent سفارشی",
+    title: "ساخت دستیار هوشمند سفارشی",
     description:
-      "طراحی و پیاده‌سازی دستیارهای هوشمند اختصاصی. از ساخت Agent با LangChain تا پیاده‌سازی RAG و ابزارهای اختصاصی، دستیار AI متناسب با کسب‌وکار خود بسازید.",
-    lessons: 30,
-    duration: "۱۸ ساعت",
+      "طراحی و پیاده‌سازی دستیارهای هوشمند اختصاصی با ابزارهای بدون کد و کم‌کد. از ساخت چت‌بات با Voiceflow و Botpress تا پیاده‌سازی RAG با پلتفرم‌های آماده.",
     level: "پیشرفته",
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
@@ -57,8 +49,6 @@ const tutorials = [
     title: "اتوماسیون کسب‌وکار عملی",
     description:
       "پیاده‌سازی واقعی اتوماسیون در سناریوهای مختلف: تولید خودکار محتوا، پاسخگویی هوشمند مشتری، گزارش‌دهی خودکار و مدیریت هوشمند ایمیل‌ها و اسناد.",
-    lessons: 20,
-    duration: "۱۰ ساعت",
     level: "کاربردی",
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
@@ -136,12 +126,8 @@ export function TutorialsSection() {
                       {/* Meta */}
                       <div className="flex items-center gap-4 text-xs text-muted-foreground">
                         <div className="flex items-center gap-1">
-                          <Zap className="w-3.5 h-3.5" />
-                          <span>{tutorial.lessons} درس</span>
-                        </div>
-                        <div className="flex items-center gap-1">
                           <Clock className="w-3.5 h-3.5" />
-                          <span>{tutorial.duration}</span>
+                          <span>به‌زودی</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Signal className="w-3.5 h-3.5" />
@@ -155,24 +141,6 @@ export function TutorialsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-12"
-        >
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-primary/30 hover:bg-primary/5 px-8"
-          >
-            مشاهده همه آموزش‌ها
-            <ArrowLeft className="w-4 h-4 mr-2" />
-          </Button>
-        </motion.div>
       </div>
     </section>
   );

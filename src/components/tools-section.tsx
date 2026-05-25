@@ -1,17 +1,14 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Workflow,
   MessageSquare,
   FileText,
-  Mail,
   BarChart3,
   Bot,
-  ArrowLeft,
-  Star,
+  Search,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -20,9 +17,9 @@ const tools = [
     icon: Workflow,
     name: "ورکفلو اتوماسیون ایمیل",
     description:
-      "دریافت ایمیل‌ها رو خودکار монитор کنید، با AI طبقه‌بندی و پاسخ اولیه بدهید. اتصال Gmail به CRM و ایجاد تیکت خودکار برای تیم پشتیبانی.",
-    tag: "پرطرفدار",
-    tagColor: "bg-orange-500/10 text-orange-500",
+      "دریافت ایمیل‌ها رو خودکار مانیتور کنید، با AI طبقه‌بندی و پاسخ اولیه بدهید. اتصال Gmail به CRM و ایجاد تیکت خودکار برای تیم پشتیبانی.",
+    tag: "پیشنهادی",
+    tagColor: "bg-blue-500/10 text-blue-500",
     category: "Make / n8n",
   },
   {
@@ -30,8 +27,8 @@ const tools = [
     name: "چت‌بات پشتیبانی هوشمند",
     description:
       "چت‌باتی که با دانش محصولات شما آموزش دیده و ۲۴ ساعته به مشتریان پاسخ می‌دهد. اتصال به واتساپ، تلگرام و وب‌سایت با یک دستیار یکپارچه.",
-    tag: "پرطرفدار",
-    tagColor: "bg-orange-500/10 text-orange-500",
+    tag: "پیشنهادی",
+    tagColor: "bg-blue-500/10 text-blue-500",
     category: "AI Agent",
   },
   {
@@ -44,13 +41,13 @@ const tools = [
     category: "GPT / Claude",
   },
   {
-    icon: Mail,
-    name: "دستیار ایمیل هوشمند",
+    icon: Search,
+    name: "جستجوی هوشمند اسناد",
     description:
-      "خواندن خودکار ایمیل‌های دریافتی، خلاصه‌سازی، اولویت‌بندی و پیشنهاد پاسخ. صرفه‌جویی ساعت‌ها در روز برای مدیریت صندوق ورودی.",
-    tag: "جدید",
-    tagColor: "bg-blue-500/10 text-blue-500",
-    category: "AI Workflow",
+      "آپلود قراردادها، فاکتورها و اسناد سازمانی و سوال‌وجواب از روی آنها. جستجوی معنایی در هزاران سند و استخراج خودکار اطلاعات کلیدی.",
+    tag: "کاربردی",
+    tagColor: "bg-green-500/10 text-green-500",
+    category: "RAG System",
   },
   {
     icon: BarChart3,
@@ -63,12 +60,12 @@ const tools = [
   },
   {
     icon: Bot,
-    name: "دستیار اسناد هوشمند",
+    name: "دستیار فروش هوشمند",
     description:
-      "آپلود قراردادها، فاکتورها و اسناد سازمانی و سوال‌وجواب از روی آنها. جستجوی معنایی در هزاران سند و استخراج خودکار اطلاعات کلیدی.",
-    tag: "حرفه‌ای",
-    tagColor: "bg-teal-500/10 text-teal-500",
-    category: "RAG System",
+      "دستیار AI که لیدهای ورودی رو اولویت‌بندی می‌کنه، ایمیل‌های فالوآپ خودکار ارسال می‌کنه و گزارش پیشرفت فروش رو آماده می‌کنه.",
+    tag: "سازمانی",
+    tagColor: "bg-purple-500/10 text-purple-500",
+    category: "AI Workflow",
   },
 ];
 
@@ -134,29 +131,9 @@ export function ToolsSection() {
                   </span>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-sm leading-relaxed mt-3 mb-4">
+                  <p className="text-muted-foreground text-sm leading-relaxed mt-3">
                     {tool.description}
                   </p>
-
-                  {/* Footer */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500"
-                        />
-                      ))}
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-primary hover:text-primary hover:bg-primary/5 text-xs"
-                    >
-                      جزئیات بیشتر
-                      <ArrowLeft className="w-3 h-3 mr-1" />
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             </motion.div>

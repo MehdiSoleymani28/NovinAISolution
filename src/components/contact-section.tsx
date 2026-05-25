@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Phone,
   Mail,
   MapPin,
   Send,
@@ -17,12 +16,6 @@ import { motion } from "framer-motion";
 
 const contactInfo = [
   {
-    icon: Phone,
-    title: "تلفن",
-    value: "۰۲۱-۱۲۳۴۵۶۷۸",
-    description: "شنبه تا پنجشنبه، ۹ تا ۱۸",
-  },
-  {
     icon: Mail,
     title: "ایمیل",
     value: "info@novinaisolution.com",
@@ -32,7 +25,7 @@ const contactInfo = [
     icon: MapPin,
     title: "آدرس",
     value: "تهران، ایران",
-    description: "مشاوره حضوری با هماهنگی قبلی",
+    description: "مشاوره آنلاین و حضوری با هماهنگی قبلی",
   },
 ];
 
@@ -195,7 +188,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <h3 className="font-bold text-sm">{info.title}</h3>
-                      <p className="text-foreground font-medium mt-1" dir={info.title === "ایمیل" ? "ltr" : "rtl"}>
+                      <p className="text-foreground font-medium mt-1" dir="rtl">
                         {info.value}
                       </p>
                       <p className="text-xs text-muted-foreground mt-1">

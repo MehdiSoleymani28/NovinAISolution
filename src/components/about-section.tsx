@@ -65,7 +65,7 @@ export function AboutSection() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "AI-first", label: "رویکرد ابزارمحور" },
+                { value: "ابزارمحور", label: "استفاده از ابزارهای آماده" },
                 { value: "No-Code", label: "بدون نیاز به برنامه‌نویسی" },
                 { value: "عملی", label: "نتایج ملموس و سریع" },
                 { value: "سفارشی", label: "متناسب با نیاز شما" },

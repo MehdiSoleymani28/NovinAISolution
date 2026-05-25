@@ -81,10 +81,10 @@ export default function BlogPageClient({
               بلاگ
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              مقالات و آموزش‌های <span className="text-gradient">هوش مصنوعی</span>
+              مقالات و آموزش‌های <span className="text-gradient">اتوماسیون و ورکفلو</span>
             </h1>
             <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-              از مفاهیم پایه تا پیاده‌سازی عملی، آخرین مطالب تخصصی AI را دنبال کنید
+              از پرامپت‌نویسی تا ساخت ورکفلو، مطالب عملی برای خودکارسازی کسب‌وکار با AI
             </p>
           </motion.div>
 
