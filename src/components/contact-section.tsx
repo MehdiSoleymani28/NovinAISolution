@@ -19,7 +19,7 @@ const contactInfo = [
     icon: Mail,
     title: "ایمیل",
     value: "info@novinaisolution.com",
-    description: "پاسخگویی در کمتر از ۲۴ ساعت",
+    description: "پاسخگویی در اسرع وقت",
   },
   {
     icon: MapPin,
@@ -67,7 +67,7 @@ export function ContactSection() {
             نیازسنجی رایگان <span className="text-gradient">اتوماسیون</span>
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-            بگویید کدام فرآیندهای سازمانتان دستی و تکراری است، تا راهکار اتوماسیون را به شما نشان دهیم
+            بگویید کدام فرآیندهای سازمانتان دستی و تکراری است، تا راهکار اتوماسیون را با هم بررسی کنیم
           </p>
         </motion.div>
 
@@ -205,8 +205,8 @@ export function ContactSection() {
               <CardContent className="p-5">
                 <h3 className="font-bold mb-2">نیازسنجی رایگان اتوماسیون</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  فرآیندهای دستی سازمانتان رو به ما بگویید تا در یک جلسه ۳۰ دقیقه‌ای،
-                  راهکار عملی و هزینه اتوماسیون رو به شما ارائه دهیم. بدون هیچ تعهدی.
+                  فرآیندهای دستی سازمانتان را به ما بگویید تا در یک جلسه آنلاین،
+                  راهکار عملی و هزینه تقریبی اتوماسیون را بررسی کنیم. بدون هیچ تعهدی.
                 </p>
               </CardContent>
             </Card>

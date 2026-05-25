@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1344,
         height: 768,
-        alt: "NovinAISolution - مشاوره و خدمات هوش مصنوعی",
+        alt: "NovinAISolution - اتوماسیون و ورکفلو هوشمند با ابزارهای AI",
       },
     ],
   },
@@ -102,7 +102,7 @@ export default function RootLayout({
                 "پیاده‌سازی ورکفلوهای هوشمند و اتوماسیون فرآیندهای دستی کسب‌وکار با ابزارهای AI و پلتفرم‌های No-Code",
               url: "https://novinaisolution.com",
               logo: "https://novinaisolution.com/logo.png",
-              sameAs: [],
+              sameAs: ["https://github.com/MehdiSoleymani28/NovinAISolution"],
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer service",
@@ -121,7 +121,7 @@ export default function RootLayout({
               url: "https://novinaisolution.com",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://novinaisolution.com/search?q={search_term_string}",
+                target: "https://novinaisolution.com/blog?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

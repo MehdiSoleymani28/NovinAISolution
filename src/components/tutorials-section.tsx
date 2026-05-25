@@ -28,7 +28,7 @@ const tutorials = [
     icon: Workflow,
     title: "ساخت ورکفلو با Make و n8n",
     description:
-      "آموزش عملی ساخت جریان‌های کاری خودکار. از اتصال Gmail به Slack تا ساخت پایپ‌لاین‌های پیچیده پردازش داده، هر ورکفلی که نیاز دارید رو خودتان بسازید.",
+      "آموزش عملی ساخت جریان‌های کاری خودکار. از اتصال Gmail به Slack تا ساخت پایپ‌لاین‌های پیچیده پردازش داده، هر ورکفلی که نیاز دارید را خودتان بسازید.",
     level: "عملی",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
@@ -77,7 +77,7 @@ export function TutorialsSection() {
             آموزش‌ها
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            ابزارهای AI رو <span className="text-gradient">عملی یاد بگیرید</span>
+            ابزارهای AI را <span className="text-gradient">عملی یاد بگیرید</span>
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
             نه تئوری، نه ریاضیات. آموزش عملی ابزارهایی که همین امروز به درد کسب‌وکار شما می‌خورند

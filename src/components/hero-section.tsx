@@ -28,7 +28,7 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-primary mb-8"
           >
             <Sparkles className="w-4 h-4" />
-            <span>کارهای دستی رو به خودکار تبدیل کنید</span>
+            <span>فرآیندهای دستی را خودکار کنید</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -53,8 +53,8 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground mb-10 leading-relaxed"
           >
-            با استفاده از ابزارهای هوش مصنوعی، فرآیندهای دستی سازمانتون رو خودکار کنید.
-            از ساخت ورکفلو و دستیارهای هوشمند تا اتوماسیون کامل کسب‌وکار، همراه شما هستیم.
+            با استفاده از ابزارهای هوش مصنوعی، فرآیندهای دستی سازمان خود را خودکار کنید.
+            از طراحی ورکفلو و دستیارهای هوشمند تا اتوماسیون کسب‌وکار، همراه شما هستیم.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -98,7 +98,7 @@ export function HeroSection() {
               { value: "Make/n8n", label: "تخصص ورکفلو" },
               { value: "GPT/Claude", label: "دستیارهای AI" },
               { value: "No-Code", label: "بدون برنامه‌نویسی" },
-              { value: "رایگان", label: "نیازسنجی اولیه" },
+              { value: "رایگان", label: "مشاوره اولیه" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-gradient">
