@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ArticlePageClient from "./article-client";
 
+// Force dynamic rendering - don't try to pre-render at build time
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

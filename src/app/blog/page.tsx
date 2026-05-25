@@ -2,6 +2,9 @@ import { db } from "@/lib/db";
 import { Metadata } from "next";
 import BlogPageClient from "./blog-client";
 
+// Force dynamic rendering - don't try to pre-render at build time
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "بلاگ NovinAISolution | مقالات و آموزش‌های هوش مصنوعی",
   description:
