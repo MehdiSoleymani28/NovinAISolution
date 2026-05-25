@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Brain } from "lucide-react";
+import { Menu, X, Brain, LogIn } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -73,6 +73,17 @@ export function Header() {
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <Button
+              variant="ghost"
+              size="sm"
+              className="hidden sm:flex text-muted-foreground hover:text-foreground"
+              asChild
+            >
+              <Link href="/admin/login">
+                <LogIn className="w-4 h-4 ml-1" />
+                ورود
+              </Link>
+            </Button>
+            <Button
               size="sm"
               className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground"
               asChild
@@ -111,7 +122,21 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <div className="px-4 pt-2">
+              <div className="px-4 pt-2 space-y-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  asChild
+                >
+                  <Link
+                    href="/admin/login"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <LogIn className="w-4 h-4 ml-1" />
+                    ورود به پنل
+                  </Link>
+                </Button>
                 <Button
                   size="sm"
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"

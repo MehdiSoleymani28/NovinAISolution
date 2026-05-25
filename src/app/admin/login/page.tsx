@@ -114,6 +114,48 @@ export default function AdminLoginPage() {
                 ) : null}
                 ورود
               </Button>
+
+              {/* Quick Login - Temporary */}
+              <div className="relative my-4">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t border-border" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-card px-2 text-muted-foreground">دسترسی سریع</span>
+                </div>
+              </div>
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full border-primary/30 hover:bg-primary/10"
+                disabled={isLoading}
+                onClick={async () => {
+                  setEmail("admin@novinaisolution.com");
+                  setPassword("admin123");
+                  setIsLoading(true);
+                  try {
+                    const res = await fetch("/api/auth", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ email: "admin@novinaisolution.com", password: "admin123" }),
+                    });
+                    const data = await res.json();
+                    if (!res.ok) {
+                      setError(data.error || "خطا در ورود");
+                      return;
+                    }
+                    login(data);
+                    router.push("/admin/dashboard");
+                  } catch {
+                    setError("خطا در اتصال به سرور");
+                  } finally {
+                    setIsLoading(false);
+                  }
+                }}
+              >
+                <Brain className="w-4 h-4 ml-2" />
+                ورود سریع ادمین
+              </Button>
             </form>
           </CardContent>
         </Card>
