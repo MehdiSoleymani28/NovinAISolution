@@ -10,11 +10,11 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { href: "/", label: "خانه" },
   { href: "/#services", label: "خدمات" },
-  { href: "/training", label: "آموزش‌ها" },
   { href: "/#tools", label: "ابزارها" },
   { href: "/blog", label: "بلاگ" },
   { href: "/#about", label: "درباره ما" },
   { href: "/#contact", label: "تماس" },
+  // { href: "/training", label: "آموزش‌ها" }, // TODO: فعال‌سازی پس از تکمیل محتوا
 ];
 
 export function Header() {

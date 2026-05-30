@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Brain, Github, Linkedin, Twitter } from "lucide-react";
+import { Brain, Github } from "lucide-react";
 
 const footerLinks = {
   services: {
@@ -13,22 +13,21 @@ const footerLinks = {
       { label: "مشاوره و نیازسنجی", href: "/#contact" },
     ],
   },
-  tutorials: {
-    title: "آموزش‌ها",
-    links: [
-      { label: "ChatGPT و Claude", href: "/training/chatgpt-claude-professional" },
-      { label: "Make و n8n", href: "/training/make-n8n-workflow" },
-      { label: "ساخت AI Agent", href: "/training/custom-ai-agent" },
-      { label: "اتوماسیون عملی", href: "/training/business-automation-practical" },
-    ],
-  },
+  // tutorials: { // TODO: فعال‌سازی پس از تکمیل محتوا
+  //   title: "آموزش‌ها",
+  //   links: [
+  //     { label: "ChatGPT و Claude", href: "/training/chatgpt-claude-professional" },
+  //     { label: "Make و n8n", href: "/training/make-n8n-workflow" },
+  //     { label: "ساخت AI Agent", href: "/training/custom-ai-agent" },
+  //     { label: "اتوماسیون عملی", href: "/training/business-automation-practical" },
+  //   ],
+  // },
   company: {
     title: "شرکت",
     links: [
       { label: "درباره ما", href: "/#about" },
       { label: "تماس با ما", href: "/#contact" },
       { label: "بلاگ", href: "/blog" },
-      { label: "آموزش‌ها", href: "/training" },
     ],
   },
 };
