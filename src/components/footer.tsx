@@ -1,33 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { Brain, Github } from "lucide-react";
+import { Brain, Github, Linkedin, Twitter } from "lucide-react";
 
 const footerLinks = {
   services: {
     title: "خدمات",
     links: [
-      { label: "ورکفلو هوشمند", href: "#services" },
-      { label: "دستیار هوشمند", href: "#services" },
-      { label: "پیاده‌سازی ابزارهای AI", href: "#services" },
-      { label: "مشاوره و نیازسنجی", href: "#services" },
+      { label: "ورکفلو هوشمند", href: "/#services" },
+      { label: "دستیار هوشمند", href: "/#services" },
+      { label: "پیاده‌سازی ابزارهای AI", href: "/#services" },
+      { label: "مشاوره و نیازسنجی", href: "/#contact" },
     ],
   },
   tutorials: {
     title: "آموزش‌ها",
     links: [
-      { label: "ChatGPT و Claude", href: "#tutorials" },
-      { label: "Make و n8n", href: "#tutorials" },
-      { label: "ساخت AI Agent", href: "#tutorials" },
-      { label: "اتوماسیون عملی", href: "#tutorials" },
+      { label: "ChatGPT و Claude", href: "/training/chatgpt-claude-professional" },
+      { label: "Make و n8n", href: "/training/make-n8n-workflow" },
+      { label: "ساخت AI Agent", href: "/training/custom-ai-agent" },
+      { label: "اتوماسیون عملی", href: "/training/business-automation-practical" },
     ],
   },
   company: {
     title: "شرکت",
     links: [
-      { label: "درباره ما", href: "#about" },
-      { label: "تماس", href: "#contact" },
+      { label: "درباره ما", href: "/#about" },
+      { label: "تماس با ما", href: "/#contact" },
       { label: "بلاگ", href: "/blog" },
+      { label: "آموزش‌ها", href: "/training" },
     ],
   },
 };
@@ -57,7 +58,7 @@ export function Footer() {
               با ابزارهای آماده، سریع و مقرون‌به‌صرفه.
             </p>
             <div className="flex items-center gap-3">
-                <Link
+              <Link
                 href="https://github.com/MehdiSoleymani28/NovinAISolution"
                 className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
                 aria-label="GitHub"
@@ -96,7 +97,7 @@ export function Footer() {
             <Link href="/blog" className="hover:text-foreground transition-colors">
               بلاگ
             </Link>
-            <Link href="#contact" className="hover:text-foreground transition-colors">
+            <Link href="/#contact" className="hover:text-foreground transition-colors">
               تماس با ما
             </Link>
           </div>

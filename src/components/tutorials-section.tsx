@@ -2,23 +2,29 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   MessageSquare,
   Workflow,
   Settings,
   Zap,
+  ArrowLeft,
   Clock,
   Signal,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const tutorials = [
   {
     category: "مقدماتی",
     icon: MessageSquare,
     title: "کار حرفه‌ای با ChatGPT و Claude",
+    slug: "chatgpt-claude-professional",
     description:
       "یادگیری پرامپت‌نویسی حرفه‌ای و استفاده مؤثر از مدل‌های زبانی. از نوشتن پرامپت‌های دقیق تا ساخت سیستم‌های پرامپت زنجیره‌ای برای خودکارسازی وظایف روزانه.",
+    lessons: 18,
+    duration: "۸ ساعت",
     level: "مقدماتی",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
@@ -27,8 +33,11 @@ const tutorials = [
     category: "عملی",
     icon: Workflow,
     title: "ساخت ورکفلو با Make و n8n",
+    slug: "make-n8n-workflow",
     description:
-      "آموزش عملی ساخت جریان‌های کاری خودکار. از اتصال Gmail به Slack تا ساخت پایپ‌لاین‌های پیچیده پردازش داده، هر ورکفلی که نیاز دارید را خودتان بسازید.",
+      "آموزش عملی ساخت جریان‌های کاری خودکار. از اتصال Gmail به Slack تا ساخت پایپ‌لاین‌های پیچیده پردازش داده، هر ورکفلی که نیاز دارید رو خودتان بسازید.",
+    lessons: 24,
+    duration: "۱۲ ساعت",
     level: "عملی",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
@@ -36,9 +45,12 @@ const tutorials = [
   {
     category: "پیشرفته",
     icon: Settings,
-    title: "ساخت دستیار هوشمند سفارشی",
+    title: "ساخت AI Agent سفارشی",
+    slug: "custom-ai-agent",
     description:
-      "طراحی و پیاده‌سازی دستیارهای هوشمند اختصاصی با ابزارهای بدون کد و کم‌کد. از ساخت چت‌بات با Voiceflow و Botpress تا پیاده‌سازی RAG با پلتفرم‌های آماده.",
+      "طراحی و پیاده‌سازی دستیارهای هوشمند اختصاصی. از ساخت Agent با LangChain تا پیاده‌سازی RAG و ابزارهای اختصاصی، دستیار AI متناسب با کسب‌وکار خود بسازید.",
+    lessons: 30,
+    duration: "۱۸ ساعت",
     level: "پیشرفته",
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
@@ -47,8 +59,11 @@ const tutorials = [
     category: "کاربردی",
     icon: Zap,
     title: "اتوماسیون کسب‌وکار عملی",
+    slug: "business-automation-practical",
     description:
       "پیاده‌سازی واقعی اتوماسیون در سناریوهای مختلف: تولید خودکار محتوا، پاسخگویی هوشمند مشتری، گزارش‌دهی خودکار و مدیریت هوشمند ایمیل‌ها و اسناد.",
+    lessons: 20,
+    duration: "۱۰ ساعت",
     level: "کاربردی",
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
@@ -77,7 +92,7 @@ export function TutorialsSection() {
             آموزش‌ها
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            ابزارهای AI را <span className="text-gradient">عملی یاد بگیرید</span>
+            ابزارهای AI رو <span className="text-gradient">عملی یاد بگیرید</span>
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
             نه تئوری، نه ریاضیات. آموزش عملی ابزارهایی که همین امروز به درد کسب‌وکار شما می‌خورند
@@ -94,53 +109,83 @@ export function TutorialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <Card className="group h-full border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div
-                      className={`w-14 h-14 rounded-xl ${tutorial.bgColor} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <tutorial.icon
-                        className={`w-7 h-7 ${tutorial.color}`}
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Badge
-                          variant="secondary"
-                          className="text-xs font-medium"
-                        >
-                          {tutorial.category}
-                        </Badge>
+              <Link href={`/training/${tutorial.slug}`}>
+                <Card className="group h-full border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      {/* Icon */}
+                      <div
+                        className={`w-14 h-14 rounded-xl ${tutorial.bgColor} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <tutorial.icon
+                          className={`w-7 h-7 ${tutorial.color}`}
+                        />
                       </div>
-                      <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
-                        {tutorial.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                        {tutorial.description}
-                      </p>
 
-                      {/* Meta */}
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5" />
-                          <span>به‌زودی</span>
+                      {/* Content */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Badge
+                            variant="secondary"
+                            className="text-xs font-medium"
+                          >
+                            {tutorial.category}
+                          </Badge>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <Signal className="w-3.5 h-3.5" />
-                          <span>{tutorial.level}</span>
+                        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                          {tutorial.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                          {tutorial.description}
+                        </p>
+
+                        {/* Meta */}
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <Zap className="w-3.5 h-3.5" />
+                              <span>{tutorial.lessons} درس</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-3.5 h-3.5" />
+                              <span>{tutorial.duration}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Signal className="w-3.5 h-3.5" />
+                              <span>{tutorial.level}</span>
+                            </div>
+                          </div>
+                          <ArrowLeft className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center mt-12"
+        >
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-primary/30 hover:bg-primary/5 px-8"
+            asChild
+          >
+            <Link href="/training">
+              مشاهده همه آموزش‌ها
+              <ArrowLeft className="w-4 h-4 mr-2" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

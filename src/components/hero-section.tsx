@@ -80,7 +80,7 @@ export function HeroSection() {
               className="px-8 py-6 text-base border-primary/30 hover:bg-primary/5"
               asChild
             >
-              <Link href="#tutorials">
+              <Link href="/training">
                 آموزش ابزارهای AI
                 <ArrowLeft className="w-5 h-5 mr-2" />
               </Link>

@@ -67,6 +67,32 @@ model ArticleTag {
   @@unique([articleId, tagId])
 }
 
+// ===== Course / Training Models =====
+
+model Course {
+  id          String         @id @default(cuid())
+  title       String
+  slug        String         @unique
+  excerpt     String?
+  content     String
+  coverImage  String?
+  category    String         @default("مقدماتی")
+  level       String         @default("beginner")
+  duration    String         @default("۸ ساعت")
+  lessonsCount Int           @default(0)
+  price       String         @default("رایگان")
+  features    String         @default("[]")  // JSON array of features
+  syllabus    String         @default("[]")  // JSON array of syllabus items
+  instructor  String         @default("تیم نوین ای‌آی سولوشن")
+  published   Boolean        @default(false)
+  featured    Boolean        @default(false)
+  order       Int            @default(0)
+  metaTitle   String?
+  metaDesc    String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
 // ===== AI Chatbot Models =====
 
 model ChatbotSettings {
