@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, X, Send, User, Phone, Mail, Loader2 } from "lucide-react";
+import { Bot, X, Send, User, Phone, MessageCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -212,7 +212,7 @@ export function ChatWidget() {
       const fallbackMsg: ChatMessage = {
         id: generateId(),
         role: "assistant",
-        content: "سلام! من دستیار هوشمند نوین ای‌آی سولوشن هستم. چطور می‌تونم کمکتون کنم؟",
+        content: "سلام! من دستیار هوشمند NovinAI Solution هستم. چطور می‌تونم کمکتون کنم؟",
         timestamp: new Date(),
       };
       setMessages([fallbackMsg]);
@@ -457,7 +457,7 @@ export function ChatWidget() {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <Mail className="w-6 h-6" />
+              <MessageCircle className="w-6 h-6" />
             </motion.div>
           )}
         </AnimatePresence>

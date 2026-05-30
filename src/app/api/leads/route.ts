@@ -39,11 +39,11 @@ export async function GET(req: NextRequest) {
   }
 }
 
-// POST: Create a lead from chat widget
+// POST: Create a lead from chat widget or contact form
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, phone, email, conversationId, note } = body;
+    const { name, phone, email, conversationId, note, message, company } = body;
 
     if (!name || !phone) {
       return NextResponse.json(
@@ -52,36 +52,69 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!conversationId) {
-      return NextResponse.json(
-        { error: "شناسه گفتگو الزامی است" },
-        { status: 400 }
-      );
+    let convId = conversationId;
+
+    // If no conversationId (e.g. from contact form), create a new conversation
+    if (!convId) {
+      const conversation = await db.conversation.create({
+        data: {
+          visitorName: name,
+          visitorPhone: phone,
+          status: "active",
+        },
+      });
+      convId = conversation.id;
+
+      // If there's a message (from contact form), add it as a conversation message
+      if (message) {
+        await db.message.create({
+          data: {
+            conversationId: convId,
+            role: "user",
+            content: message,
+          },
+        });
+      }
+    } else {
+      // Check if conversation exists (for chat widget leads)
+      const conversation = await db.conversation.findUnique({
+        where: { id: convId },
+      });
+
+      if (!conversation) {
+        return NextResponse.json(
+          { error: "گفتگو یافت نشد" },
+          { status: 404 }
+        );
+      }
+
+      // Check if lead already exists for this conversation
+      const existingLead = await db.lead.findUnique({
+        where: { conversationId: convId },
+      });
+
+      if (existingLead) {
+        return NextResponse.json(
+          { error: "برای این گفتگو قبلاً سرنخ ثبت شده است" },
+          { status: 400 }
+        );
+      }
+
+      // Update conversation visitor info
+      await db.conversation.update({
+        where: { id: convId },
+        data: {
+          visitorName: name,
+          visitorPhone: phone,
+        },
+      });
     }
 
-    // Check if conversation exists
-    const conversation = await db.conversation.findUnique({
-      where: { id: conversationId },
-    });
-
-    if (!conversation) {
-      return NextResponse.json(
-        { error: "گفتگو یافت نشد" },
-        { status: 404 }
-      );
-    }
-
-    // Check if lead already exists for this conversation
-    const existingLead = await db.lead.findUnique({
-      where: { conversationId },
-    });
-
-    if (existingLead) {
-      return NextResponse.json(
-        { error: "برای این گفتگو قبلاً سرنخ ثبت شده است" },
-        { status: 400 }
-      );
-    }
+    // Build the note field with company and message info
+    const noteParts: string[] = [];
+    if (company) noteParts.push(`شرکت: ${company}`);
+    if (note) noteParts.push(note);
+    if (message && !note) noteParts.push(message);
 
     // Create lead
     const lead = await db.lead.create({
@@ -89,8 +122,8 @@ export async function POST(req: NextRequest) {
         name,
         phone,
         email: email || null,
-        note: note || null,
-        conversationId,
+        note: noteParts.length > 0 ? noteParts.join(" | ") : null,
+        conversationId: convId,
         status: "new",
       },
       include: {
@@ -104,15 +137,6 @@ export async function POST(req: NextRequest) {
             createdAt: true,
           },
         },
-      },
-    });
-
-    // Update conversation visitor info
-    await db.conversation.update({
-      where: { id: conversationId },
-      data: {
-        visitorName: name,
-        visitorPhone: phone,
       },
     });
 

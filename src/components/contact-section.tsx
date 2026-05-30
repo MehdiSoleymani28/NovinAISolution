@@ -36,11 +36,32 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    try {
+      const form = e.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get("name") as string,
+        email: formData.get("email") as string,
+        phone: formData.get("phone") as string,
+        company: formData.get("company") as string,
+        message: formData.get("message") as string,
+      };
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || "خطا در ارسال فرم");
+      }
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (err) {
+      console.error("Form submission error:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -89,6 +110,7 @@ export function ContactSection() {
                         نام و نام خانوادگی
                       </label>
                       <Input
+                        name="name"
                         placeholder="نام شما"
                         required
                         className="bg-background/50"
@@ -100,6 +122,7 @@ export function ContactSection() {
                       </label>
                       <Input
                         type="email"
+                        name="email"
                         placeholder="email@example.com"
                         dir="ltr"
                         required
@@ -114,6 +137,7 @@ export function ContactSection() {
                       </label>
                       <Input
                         type="tel"
+                        name="phone"
                         placeholder="۰۹۱۲۳۴۵۶۷۸۹"
                         required
                         className="bg-background/50"
@@ -124,6 +148,7 @@ export function ContactSection() {
                         نام شرکت
                       </label>
                       <Input
+                        name="company"
                         placeholder="نام شرکت شما"
                         className="bg-background/50"
                       />
@@ -134,6 +159,7 @@ export function ContactSection() {
                       توضیحات پروژه
                     </label>
                     <Textarea
+                      name="message"
                       placeholder="کدام فرآیندهای سازمانتان دستی و تکراری است؟ چه کارهایی دوست دارید خودکار شوند؟"
                       rows={5}
                       required
