@@ -69,7 +69,7 @@ export function HeroSection() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base blue-glow"
               asChild
             >
-              <Link href="#services">
+              <Link href="/#services">
                 <Zap className="w-5 h-5 ml-2" />
                 اتوماسیون کسب‌وکار
               </Link>

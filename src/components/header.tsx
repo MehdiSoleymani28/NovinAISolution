@@ -8,13 +8,13 @@ import { Menu, X, Brain, LogIn } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "#home", label: "خانه" },
-  { href: "#services", label: "خدمات" },
+  { href: "/", label: "خانه" },
+  { href: "/#services", label: "خدمات" },
   { href: "/training", label: "آموزش‌ها" },
-  { href: "#tools", label: "ابزارها" },
+  { href: "/#tools", label: "ابزارها" },
   { href: "/blog", label: "بلاگ" },
-  { href: "#about", label: "درباره ما" },
-  { href: "#contact", label: "تماس" },
+  { href: "/#about", label: "درباره ما" },
+  { href: "/#contact", label: "تماس" },
 ];
 
 export function Header() {
@@ -88,7 +88,7 @@ export function Header() {
               className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground"
               asChild
             >
-              <Link href="#contact">مشاوره رایگان</Link>
+              <Link href="/#contact">نیازسنجی رایگان</Link>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -143,7 +143,7 @@ export function Header() {
                   asChild
                 >
                   <Link
-                    href="#contact"
+                    href="/#contact"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     مشاوره رایگان
