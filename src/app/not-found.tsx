@@ -25,12 +25,6 @@ export default function NotFound() {
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/training">
-              آموزش‌ها
-              <ArrowRight className="w-4 h-4 mr-2" />
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
             <Link href="/blog">
               بلاگ
               <ArrowRight className="w-4 h-4 mr-2" />
